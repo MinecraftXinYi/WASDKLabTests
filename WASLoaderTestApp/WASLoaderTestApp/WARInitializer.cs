@@ -5,25 +5,26 @@ using System.Text.Json;
 
 internal static class WARInitializer
 {
-    public static bool InitializeWAR(out int HResult)
+    public static bool InitializeWAR(out int hResult)
     {
         try
         {
             WASVersionInfoFromConfig wasVersionInfo = new ();
             bool result = Bootstrap.TryInitialize
                 (wasVersionInfo.MajorMinorVersion, wasVersionInfo.VersionTag, wasVersionInfo.MinVersion,
-                Bootstrap.InitializeOptions.OnNoMatch_ShowUI, out HResult);
+                Bootstrap.InitializeOptions.OnNoMatch_ShowUI, out hResult);
             return result;
         }
         catch (Exception ex)
         {
-            HResult = ex.HResult;
+            hResult = ex.HResult;
             return false;
         }
     }
 
     public class WASVersionInfoFromConfig
     {
+#pragma warning disable CA1507
         private readonly JsonElement config;
         private readonly JsonDocumentOptions jsonDocumentOptions = new ()
         {
