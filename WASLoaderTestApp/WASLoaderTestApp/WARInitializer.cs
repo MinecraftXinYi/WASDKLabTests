@@ -9,7 +9,7 @@ internal static class WARInitializer
     {
         try
         {
-            WASVersionInfoFromConfig wasVersionInfo = new();
+            WASVersionInfoFromConfig wasVersionInfo = new ();
             bool result = Bootstrap.TryInitialize
                 (wasVersionInfo.MajorMinorVersion, wasVersionInfo.VersionTag, wasVersionInfo.MinVersion,
                 Bootstrap.InitializeOptions.OnNoMatch_ShowUI, out HResult);
@@ -25,7 +25,7 @@ internal static class WARInitializer
     public class WASVersionInfoFromConfig
     {
         private readonly JsonElement config;
-        private readonly JsonDocumentOptions jsonDocumentOptions = new()
+        private readonly JsonDocumentOptions jsonDocumentOptions = new ()
         {
             AllowTrailingCommas = true,
             CommentHandling = JsonCommentHandling.Skip,
