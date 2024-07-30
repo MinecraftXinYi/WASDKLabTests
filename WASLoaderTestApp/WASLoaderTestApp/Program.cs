@@ -1,6 +1,8 @@
 ﻿using System.Text;
 using System.Threading.Tasks;
+using Windows;
 using WinRT;
+using Microsoft.Windows.ApplicationModel.DynamicDependency;
 using Microsoft.UI.Xaml;
 using WASLoaderTestApp;
 
@@ -12,7 +14,7 @@ namespace WASLoaderTest
         {
             if (!RuntimeHelper.IsMSIX)
             {
-                if (!WARInitializer.InitializeWAR(out int hresult))
+                if (!WARInitializerCs.InitializeWAR(out int hresult))
                 {
                     System.Environment.Exit(hresult);
                 }

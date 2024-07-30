@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 
@@ -28,6 +29,7 @@ namespace WASLoaderTestApp
         {
             this.InitializeComponent();
             this.ExtendsContentIntoTitleBar = true;
+            outputbox1.Text = RuntimeHelper.IsMSIX.ToString();
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)

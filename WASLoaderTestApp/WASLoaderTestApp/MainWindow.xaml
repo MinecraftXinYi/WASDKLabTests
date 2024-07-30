@@ -13,6 +13,10 @@
     </Window.SystemBackdrop>
 
     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="IsMsix: " />
+            <TextBlock x:Name="outputbox1" />
+        </StackPanel>
         <Button Click="button1_Click">Default</Button>
         <Button Click="button2_Click">CompactOverlay</Button>
         <Button Click="button3_Click">FullScreen</Button>
